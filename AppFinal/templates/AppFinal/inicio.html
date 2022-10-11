@@ -1,0 +1,30 @@
+{% extends "AppFinal/padre.html" %}
+
+{% load static %} 
+
+
+{% block Titulo %}
+
+PRIMER HERENCIA CURSO - ES EL MENU INICIO
+
+{% endblock %}
+
+{% block busqueda %} 
+
+<form action="/AppFinal/resultados/" method="GET">
+
+    <input type="number", name="camada", id="camada">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+<p>Estamos buscando la camada: {{camada}}</p>
+
+{% for curso in cursos %} 
+
+    <p>Nombre: {{curso.nombre}} ---- Camada: {{curso.camada}}</p>
+
+{% endfor %} 
+
+{% endblock %}
